@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(cv_pipeline)
+project(argus_vision)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
  add_compile_options(-std=c++11)
@@ -113,7 +113,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES cv_pipeline
+#  LIBRARIES argus_vision
 #  CATKIN_DEPENDS camera_calibration cv_bridge cv_camera image_transport image_view nodelet opencv3 roscpp std_msgs stereo_image_proc
 #  DEPENDS system_lib
 )
@@ -132,7 +132,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/cv_pipeline.cpp
+#   src/${PROJECT_NAME}/argus_vision.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -206,7 +206,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_cv_pipeline.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_argus_vision.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
