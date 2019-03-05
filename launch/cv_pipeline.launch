@@ -1,0 +1,13 @@
+<launch>
+  <!-- publish camera feed -->
+  <include file="$(find cv_pipeline)/launch/uvc_camera_stereo.launch" >
+  </include>
+
+  <!-- publish disparity map and point cloud -->
+  <node pkg="stereo_image_proc" type="stereo_image_proc" ns="stereo" name="stereo_image_proc" >
+    <param name="min_disparity" value="32" />
+    <param name="disparity_range" value="160" />
+    <param name="texture_threshold" value="500" />
+  </node>
+
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+  <group ns="stereo">
+    <node pkg="uvc_camera" type="uvc_stereo_node" name="uvc_camera_stereo">
+      <param name="width" value="1280" />
+      <param name="height" value="720" />
+      <param name="left/device" value="/dev/v4l/by-id/usb-046d_0825_6375B8A0-video-index0" />
+      <param name="right/device" value="/dev/v4l/by-id/usb-046d_0825_D2E5B8A0-video-index0" />
+      <param name="left/camera_info_url" value="file://$(find cv_pipeline)/config/left.yaml" />
+      <param name="right/camera_info_url" value="file://$(find cv_pipeline)/config/right.yaml" />
+    </node>
+  </group>
+</launch>

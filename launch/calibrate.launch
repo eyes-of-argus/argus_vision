@@ -1,0 +1,32 @@
+<launch>
+  <!-- command line arguments -->
+  <arg name="size1"      value="8x6" />
+  <arg name="square1"    value="0.10775" />
+  <arg name="size2"     value="8x6" />
+  <arg name="square2"   value="0.02648" />
+  <arg name="approx"    value="0.0001"/>
+
+  <!-- ros parameters -->
+  <arg name="left_img"  value="/stereo/left/image_raw" />
+  <arg name="right_img" value="/stereo/right/image_raw" />
+  <arg name="left_cam"  value="/stereo/left" />
+  <arg name="right_cam" value="/stereo/right" />
+
+  <!-- publish camera images -->
+  <include file="$(find cv_pipeline)/launch/uvc_camera_stereo.launch" >
+  </include>
+
+  <!-- calibrate node -->
+  <node 
+    pkg="camera_calibration" 
+    name="cv_calibrate" 
+    type="cameracalibrator.py" 
+    output="screen" 
+    args="--size=$(arg size1) --square=$(arg square1)" 
+  >
+    <remap from="left"         to="$(arg left_img)" />
+    <remap from="right"        to="$(arg right_img)" />
+    <remap from="left_camera"  to="$(arg left_cam)" />
+    <remap from="right_camera" to="$(arg right_cam)" />
+  </node>
+</launch>
