@@ -5,8 +5,8 @@
       <param name="height" value="720" />
       <param name="left/device" value="/dev/v4l/by-id/usb-046d_0825_6375B8A0-video-index0" />
       <param name="right/device" value="/dev/v4l/by-id/usb-046d_0825_D2E5B8A0-video-index0" />
-      <param name="left/camera_info_url" value="file://$(find cv_pipeline)/config/left.yaml" />
-      <param name="right/camera_info_url" value="file://$(find cv_pipeline)/config/right.yaml" />
+      <param name="left/camera_info_url" value="file://$(find argus_vision)/config/left.yaml" />
+      <param name="right/camera_info_url" value="file://$(find argus_vision)/config/right.yaml" />
     </node>
   </group>
 </launch>

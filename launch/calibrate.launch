@@ -13,7 +13,7 @@
   <arg name="right_cam" value="/stereo/right" />
 
   <!-- publish camera images -->
-  <include file="$(find cv_pipeline)/launch/uvc_camera_stereo.launch" >
+  <include file="$(find argus_vision)/launch/uvc_camera_stereo.launch" >
   </include>
 
   <!-- calibrate node -->
