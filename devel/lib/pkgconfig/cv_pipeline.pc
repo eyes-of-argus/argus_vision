@@ -1,8 +1,0 @@
-prefix=/home/kaan/Documents/src/ed2/catkin_ws/src/cv_pipeline/devel
-
-Name: cv_pipeline
-Description: Description of cv_pipeline
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/kaan/Documents/src/ed2/catkin_ws/src/cv_pipeline/devel/lib 
-Requires: 
