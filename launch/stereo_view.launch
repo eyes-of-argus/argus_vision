@@ -2,5 +2,6 @@
   <node pkg="image_view" type="stereo_view" name="stereo_view">
     <remap from="stereo" to="/stereo" />
     <remap from="image" to="image_rect" />
+    <param name="autosize" value="false" />
   </node>
 </launch>
