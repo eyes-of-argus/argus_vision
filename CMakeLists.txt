@@ -19,6 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   nodelet
   roscpp
   std_msgs
+  stereo_msgs
   stereo_image_proc
 )
 
@@ -80,6 +81,7 @@ find_package(catkin REQUIRED COMPONENTS
 # generate_messages(
 #   DEPENDENCIES
 #   std_msgs
+#   stereo_msgs
 # )
 
 ################################################
@@ -128,6 +130,7 @@ include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -145,6 +148,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(camera_check src/camera_check.cpp)
  add_executable(stereo_publisher src/stereo_publisher.cpp)
+ add_executable(combine_disparity src/combine_disparity.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -164,6 +168,9 @@ include_directories(
   target_link_libraries(stereo_publisher
     ${catkin_LIBRARIES}
     ${OpenCV_LIBRARIES}
+  )
+  target_link_libraries(combine_disparity
+    ${catkin_LIBRARIES}
   )
 
 #############
