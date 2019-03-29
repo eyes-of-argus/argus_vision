@@ -21,6 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   stereo_msgs
   stereo_image_proc
+  argus_rail
 )
 
 ## System dependencies are found with CMake's conventions
@@ -149,6 +150,8 @@ include_directories(
  add_executable(camera_check src/camera_check.cpp)
  add_executable(stereo_publisher src/stereo_publisher.cpp)
  add_executable(combine_disparity src/combine_disparity.cpp)
+
+add_dependencies(stereo_publisher ${catkin_EXPORTED_TARGETS})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
