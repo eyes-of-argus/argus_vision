@@ -1,7 +1,10 @@
-#include <iostream>
+#include "ros/ros.h"
+#include "nodelet/loader.h"
 
 int main(int argc, char** argv)
 {
-	std::cout << "stereo_publisher\n";
-	return 0;
+	// request baseline
+	// subscribe to correct nodelet baseline
+	// store image copy locally
+	// average disparity reading
 }
