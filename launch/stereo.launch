@@ -1,0 +1,27 @@
+<!-- 
+This launch file runs the stereo_image_proc node that rectifies stereo image pairs
+and calculates the disparity image.
+
+For more information on stereo_image_proc parameters, see
+http://wiki.ros.org/stereo_image_proc/Tutorials/ChoosingGoodStereoParameters
+-->
+
+<launch>
+  <node pkg="stereo_image_proc" type="stereo_image_proc" ns="stereo" name="stereo_image_proc" >
+    <!-- Pre-filtering to normalize image brightness and enhance texture -->
+    <param name="prefilter_size" value="9" />
+    <param name="prefilter_cap" value="32" />
+
+    <!-- Correspondence search along horizontal epipolar lines using an SAD window -->
+    <!-- Closer objects will have larger disparity values -->
+    <param name="correlation_window_size" value="17" />
+    <param name="min_disparity" value="128" />
+    <param name="disparity_range" value="256" />
+
+    <!-- Post-filtering to eliminate bad correspondence matches -->
+    <param name="uniqueness_ration" value="15.0" />
+    <param name="texture_threshold" value="0" />
+    <param name="speckle_size" value="400" />
+    <param name="speckle_range" value="5" />
+  </node>
+</launch>
