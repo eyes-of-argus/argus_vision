@@ -1,0 +1,21 @@
+<!-- 
+This launch file displays the left and right images published to the ROS network.
+Use this when trying to view images on a secondary machine wirelessly. Either
+uvc_camera_stereo.launch or cv_pipeline.launch must be running on primary vehicle.
+
+Note: This method does NOT display syncronized images. There is noticable delay between
+pairs if the network is overloaded.
+-->
+
+<launch>
+  <node pkg="image_view" type="image_view" name="image_view_compressed_left">
+    <remap from="image" to="stereo/left/image_rect" />
+	<param name="image_transport" value="compressed" />
+    <param name="autosize" value="false" />
+  </node>
+  <node pkg="image_view" type="image_view" name="image_view_compressed_right">
+    <remap from="image" to="stereo/right/image_rect" />
+	<param name="image_transport" value="compressed" />
+    <param name="autosize" value="false" />
+  </node>
+</launch>
